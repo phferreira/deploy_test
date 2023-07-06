@@ -18,6 +18,9 @@ name: Build & upload to Firebase App Distribution
 
 on: [push]
 
+env:
+  FLUTTER_CHANNEL: "stable"
+
 jobs:
   build:
 
