@@ -41,8 +41,8 @@ jobs:
           # - run: flutter pub get
           # - run: flutter build apk --release 
     - run: | 
-        echo "GITHUB_RUN_ATTEMPT: ${{ GITHUB_RUN_ATTEMPT }}"
-        echo "GITHUB_RUN_NUMBER: ${{ GITHUB_RUN_NUMBER }}"
+        echo "GITHUB_RUN_ATTEMPT: ${ GITHUB_RUN_ATTEMPT }"
+        echo "GITHUB_RUN_NUMBER: ${ GITHUB_RUN_NUMBER }"
           # - name: upload artifact to Firebase App Distribution
           #   uses: wzieba/Firebase-Distribution-Github-Action@v0
           #   with:
