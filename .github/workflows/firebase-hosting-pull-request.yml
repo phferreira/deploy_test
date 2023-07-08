@@ -37,13 +37,16 @@ jobs:
       uses: subosito/flutter-action@v1
       with:
         channel: ${{env.FLUTTER_CHANNEL}}
-    - run: flutter clean
-    - run: flutter pub get
-    - run: flutter build apk --release 
-    - name: upload artifact to Firebase App Distribution
-      uses: wzieba/Firebase-Distribution-Github-Action@v1
-      with:
-        appId: ${{secrets.FIREBASE_APP_ID}}
-        serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-        groups: testers
-        file: build/app/outputs/flutter-apk/app-release.apk
+          # - run: flutter clean
+          # - run: flutter pub get
+          # - run: flutter build apk --release 
+    - run: | 
+        echo "GITHUB_RUN_ATTEMPT: ${{ GITHUB_RUN_ATTEMPT }}"
+        echo "GITHUB_RUN_NUMBER: ${{ GITHUB_RUN_NUMBER }}"
+          # - name: upload artifact to Firebase App Distribution
+          #   uses: wzieba/Firebase-Distribution-Github-Action@v0
+          #   with:
+          #     appId: ${{secrets.FIREBASE_APP_ID}}
+          #     serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+          #     groups: testers
+          #     file: build/app/outputs/flutter-apk/app-release.apk
